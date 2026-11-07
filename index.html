@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>סִמְלֵי חַג הַחֲנֻכָּה - רֵאשִׁית קְרִיאָה לְכִיתָה א' | הוֹרָאָה בְּהַנָעָה</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Favicon Dreidel / Menorah -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕎</text></svg>">
+
+  <!-- Enforce starting at top of page immediately on load -->
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+  </script>
+</head>
+<body>
+  <div class="app-container">
+    <!-- ====================================================================
+         Top Educational Branding Banner (ראש האפליקצייה - לוגו, קישור ושם)
+         ==================================================================== -->
+    <header class="top-branding-bar">
+      <a href="https://www.bakitashelinna.co.il/" target="_blank" rel="noopener noreferrer" class="top-branding-link" title="מעבר לאתר: הוראה בהנעה, משולחנה של המורה זינובי אינה">
+        <div class="top-branding-logo-wrap">
+          <img src="logo.png" alt="לוגו הוראה בהנעה, משולחנה של המורה זינובי אינה" class="top-branding-logo">
+        </div>
+        <div class="top-branding-text-wrap">
+          <div class="top-branding-title">הוֹרָאָה בְּהַנָעָה, מִשֻּׁלְחָנָהּ שֶׁל הַמּוֹרָה זִינוֹבִי אִינָה</div>
+          <div class="top-branding-subtitle">לְמַאֲגַר חוֹמְרֵי לְמִידָה, מִשְׂחָקִים וְדַפֵּי עֲבוֹדָה לְרֵאשִׁית קְרִיאָה:</div>
+        </div>
+        <div class="top-branding-url-chip">
+          <span class="url-icon">🌐</span>
+          <span class="url-address">https://www.bakitashelinna.co.il/</span>
+          <span class="url-arrow">↗</span>
+        </div>
+      </a>
+    </header>
+    <!-- ====================================================================
+         Interactive Controls Bar (שירי חנוכה, כוכבים, מילון, צלילים)
+         ==================================================================== -->
+    <div class="controls-toolbar">
+      <!-- Background Music Player Widget (שירי חנוכה ברקע) -->
+      <div class="music-player-widget" id="music-player-widget" title="שִׁירֵי חֲנֻכָּה בָּרֶקַע">
+        <button id="btn-music-toggle" class="btn-music-toggle" aria-label="הַפְעֵל / הַפְסֵק שִׁיר רֶקַע">
+          <span id="music-play-icon">▶️</span>
+          <span class="music-btn-label">שִׁירֵי חֲנֻכָּה</span>
+        </button>
+        <div class="music-track-title" id="music-track-title">סְבִיבוֹן סֹב סֹב סֹב</div>
+        <button id="btn-music-next" class="btn-music-next" title="הַשִּׁיר הַבָּא" aria-label="הַשִּׁיר הַבָּא">⏭️</button>
+      </div>
+      <div class="toolbar-right-actions">
+        <!-- Stars Score Badge -->
+        <div class="stars-score-badge" title="כּוֹכָבֵי הַצְלָחָה שֶׁצְּבַרְתֶּם">
+          <span>⭐</span>
+          <span id="stars-counter-val">0</span>
+          <span class="stars-badge-label">כּוֹכָבִים</span>
+        </div>
+        <!-- Glossary Button -->
+        <button id="btn-open-glossary" class="btn-icon-toggle" title="מִלּוֹן סִמְלֵי הַחַג" aria-label="מִלּוֹן סִמְלֵי הַחַג">
+          📖
+        </button>
+        <!-- Sound Effects Mute Toggle -->
+        <button id="btn-sound-toggle" class="btn-icon-toggle" title="הַשְׁתֵּק / הַפְעֵל צְלִילִים" aria-label="שליטה בצלילים">
+          🔊
+        </button>
+      </div>
+    </div>
+    <!-- Subtitle Banner for 1st Grade -->
+    <div class="grade-banner">
+      <span>🕎</span>
+      <span>הַכָּרַת סִמְלֵי חַג הַחֲנֻכָּה - מְשִׂימוֹת רֵאשִׁית קְרִיאָה לְכִיתָה א'</span>
+      <span>✨</span>
+    </div>
+    <!-- ====================================================================
+         Stations Navigation Bar
+         ==================================================================== -->
+    <nav class="stations-bar" id="stations-nav-bar" aria-label="תחנות למידה לחנוכה לכיתה א"></nav>
+    <!-- ====================================================================
+         Main Interactive Game Card
+         ==================================================================== -->
+    <main class="game-card">
+      <!-- Station Sub-Header -->
+      <div class="station-header">
+        <div class="station-title-wrap">
+          <div class="station-badge" id="station-badge-num">1</div>
+          <h1 class="station-title" id="station-title-text">בְּאֵיזוֹ אוֹת מַתְחִיל הָאִיּוּר?</h1>
+        </div>
+        <div class="progress-indicator" id="progress-text">מְשִׂימָה 1 מִתּוֹךְ 12</div>
+      </div>
+      <!-- Vowelized Instructions Box -->
+      <div class="instruction-box">
+        <span class="instruction-icon">💡</span>
+        <span id="instruction-text">הַבִּיטוּ בָּאִיּוּר וּבִחֲרוּ אֶת הָאוֹת הָרִאשׁוֹנָה שֶׁבָּהּ הוּא מַתְחִיל:</span>
+      </div>
+      <!-- Dynamic Activity Container -->
+      <div id="activity-content" class="activity-stage">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+      <!-- Feedback Banner (Positive reinforcement & Retry) -->
+      <div id="feedback-banner" class="feedback-banner"></div>
+    </main>
+    <!-- ====================================================================
+         Site Footer & Educational Branding Link
+         ==================================================================== -->
+    <!-- ====================================================================
+         Site Footer & Educational Branding (סוף העמוד - לוגו, קישור וברכת חג)
+         ==================================================================== -->
+    <footer class="site-footer">
+      <div class="footer-brand-section">
+        <a href="https://www.bakitashelinna.co.il/" target="_blank" rel="noopener noreferrer" class="footer-logo-link" title="הוראה בהנעה - משולחנה של המורה זינובי אינה">
+          <img src="logo.png" alt="לוגו הוראה בהנעה" class="footer-logo-img">
+        </a>
+        
+        <div class="footer-text-block">
+          <div class="footer-main-title">הוֹרָאָה בְּהַנָעָה, מִשֻּׁלְחָנָהּ שֶׁל הַמּוֹרָה זִינוֹבִי אִינָה</div>
+          <div class="footer-sub-title">לְמַאֲגַר חוֹמְרֵי לְמִידָה, דַּפֵּי עֲבוֹדָה וּמִשְׂחָקִים:</div>
+        </div>
+      </div>
+
+      <div class="footer-actions-section">
+        <a href="https://www.bakitashelinna.co.il/" target="_blank" rel="noopener noreferrer" class="footer-url-chip" title="כניסה לאתר">
+          <span class="url-chip-icon">🌐</span>
+          <span class="url-chip-text" dir="ltr">https://www.bakitashelinna.co.il/</span>
+          <span class="url-chip-arrow">↗</span>
+        </a>
+
+        <div class="footer-badge-greeting">
+          <span>חַג חֲנֻכָּה שָׂמֵחַ, מֵאִיר וּמָתוֹק!</span>
+          <span>🕎✨</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <!-- ====================================================================
+       Celebration Trophy Modal (End of Stage / Grand Finale)
+       With bouncing animated golden trophy, applause & confetti!
+       ==================================================================== -->
+  <div class="modal-overlay" id="trophy-modal" role="dialog" aria-modal="true">
+    <div class="trophy-card">
+      <div class="trophy-icon-wrapper">
+        <!-- Animated Bouncing SVG Golden Trophy Cup -->
+        <svg class="trophy-svg trophy-bouncing" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="trophyGold" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#FFF59D"/>
+              <stop offset="40%" stop-color="#FFD54F"/>
+              <stop offset="70%" stop-color="#FFA000"/>
+              <stop offset="100%" stop-color="#FF6F00"/>
+            </linearGradient>
+            <linearGradient id="pedestal" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#546E7A"/>
+              <stop offset="50%" stop-color="#78909C"/>
+              <stop offset="100%" stop-color="#37474F"/>
+            </linearGradient>
+            <filter id="trophyGlow" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="4" result="blur" />
+              <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+            </filter>
+          </defs>
+          <!-- Handles -->
+          <path d="M28 35 C15 35 15 65 34 68 L36 58 C26 56 26 43 33 43 Z" fill="url(#trophyGold)"/>
+          <path d="M92 35 C105 35 105 65 86 68 L84 58 C94 56 94 43 87 43 Z" fill="url(#trophyGold)"/>
+          <!-- Cup Body -->
+          <path d="M32 25 L88 25 C88 25 86 65 60 75 C34 65 32 25 32 25 Z" fill="url(#trophyGold)"/>
+          <!-- Star emblem on cup -->
+          <polygon points="60,35 63,43 72,43 65,49 68,57 60,52 52,57 55,49 48,43 57,43" fill="#FFFFFF"/>
+          <!-- Stem -->
+          <rect x="55" y="75" width="10" height="18" fill="url(#trophyGold)"/>
+          <!-- Base Pedestal -->
+          <polygon points="40,93 80,93 85,108 35,108" fill="url(#pedestal)"/>
+          <rect x="32" y="108" width="56" height="6" rx="2" fill="#263238"/>
+        </svg>
+      </div>
+      <div class="trophy-title">כָּל הַכָּבוֹד! 🏆</div>
+      <div class="trophy-subtitle" id="trophy-stage-title">סִיַּמְתֶּם אֶת הַשָּׁלָב בְּהַצְלָחָה!</div>
+      <div class="trophy-stars-earned" id="trophy-stars-info">צְבַרְתֶּם 7 כּוֹכָבִים! ⭐</div>
+      <div class="trophy-actions">
+        <button class="btn-stage-advance" id="btn-modal-advance">
+          <span>עֲבֹר לַתַּחֲנָה הַבָּאָה</span>
+          <span>🏆</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- ====================================================================
+       Glossary Modal (Holiday Visual Dictionary)
+       ==================================================================== -->
+  <div class="modal-overlay" id="glossary-modal" role="dialog" aria-modal="true">
+    <div class="glossary-modal-card">
+      <div class="glossary-header">
+        <h2 class="glossary-title">
+          <span>📖</span>
+          <span>מִלּוֹן סִמְלֵי חַג הַחֲנֻכָּה לְכִיתָה א'</span>
+        </h2>
+        <button id="btn-close-glossary" class="btn-close-modal" aria-label="סְגֹר מִלּוֹן">✕</button>
+      </div>
+      <div id="glossary-grid" class="glossary-grid"></div>
+    </div>
+  </div>
+  <!-- Confetti Canvas overlay for celebrations -->
+  <canvas id="confetti-canvas"></canvas>
+  <!-- Scripts in dependency order -->
+  <script src="illustrations.js"></script>
+  <script src="data.js"></script>
+  <script src="audio.js"></script>
+  <script src="confetti.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
